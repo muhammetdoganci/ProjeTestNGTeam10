@@ -45,19 +45,17 @@ public class US016_TC0001 {
         action.sendKeys(Keys.PAGE_DOWN).perform();
 
         //Basliklari dogrular
-        List<WebElement> baslik = Driver.getDriver().findElements(By.xpath("//thead//th"));
-        for (WebElement basliklar: baslik) {
-            System.out.print(basliklar.getText()+"/");
-        }
-        System.out.println("---------------------");
-        String expectedBasliklar = "name/username/email/Location/orders/money spent/last order";
-        //String actualBasliklar = Driver.getDriver().findElement(By.xpath("//thead//tr")).getText();
-        Assert.assertNotEquals(baslik,expectedBasliklar);
-        System.out.println("expectedBasliklar = " + expectedBasliklar);
+        pearlyMarketPage.m7Name.isDisplayed();
+        pearlyMarketPage.m7Username.isDisplayed();
+        pearlyMarketPage.m7Email.isDisplayed();
+        pearlyMarketPage.m7Location.isDisplayed();
+        pearlyMarketPage.m7Orders.isDisplayed();
+        pearlyMarketPage.m7MoneySpent.isDisplayed();
+        pearlyMarketPage.m7LastOrder.isDisplayed();
 
         //table body'si icindeki hücrelerin dolu oldugunu dogrular
         WebElement body = Driver.getDriver().findElement(By.xpath("//tbody"));
-        System.out.println("body = " + body);
+        System.out.println("body = " + body.getSize());
         body.isDisplayed();
 
         Thread.sleep(2000);
