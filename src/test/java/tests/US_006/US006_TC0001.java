@@ -20,7 +20,7 @@ public class US006_TC0001 extends TestBaseRapor {
         ReusableMethods.waitFor(5);
         extentTest.info("My Account sayfasina gidildi");
 
-       // 1-Store Manager butonuna basar
+       // 1-Store Manager butonuna basar.
         ReusableMethods.prMrktstoreManager();
         extentTest.info("Store Manager sayfasina gidildi");
 
