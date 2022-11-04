@@ -17,11 +17,13 @@ import java.nio.file.Paths;
 
 public class US016_TC0002 {
 
-    M7PearlyMarketPage pearlyMarketPage = new M7PearlyMarketPage();
-    Actions action = new Actions(Driver.getDriver());
+    M7PearlyMarketPage pearlyMarketPage;
+    Actions action;
 
     @Test
     public void TC0002() throws InterruptedException {
+        pearlyMarketPage = new M7PearlyMarketPage();
+        action = new Actions(Driver.getDriver());
         //vendor URL adresine gider
         Driver.getDriver().get(ConfigReader.getProperty("pearlyUrl"));
 

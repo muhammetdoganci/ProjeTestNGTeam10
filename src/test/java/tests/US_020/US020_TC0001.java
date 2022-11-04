@@ -16,11 +16,12 @@ import java.io.ObjectInputFilter;
 import java.util.List;
 
 public class US020_TC0001 {
-    M7PearlyMarketPage pearlyMarketPage = new M7PearlyMarketPage();
-    Actions action = new Actions(Driver.getDriver());
-
+    M7PearlyMarketPage pearlyMarketPage;
+    Actions action;
     @Test
     public void TC0001() throws InterruptedException {
+        pearlyMarketPage = new M7PearlyMarketPage();
+        action = new Actions(Driver.getDriver());
         //vendro URL adresine gider
         Driver.getDriver().get(ConfigReader.getProperty("pearlyUrl"));
 

@@ -16,11 +16,12 @@ import java.util.List;
 
 public class US020_TC0002 {
 
-    M7PearlyMarketPage pearlyMarketPage = new M7PearlyMarketPage();
-    Actions action = new Actions(Driver.getDriver());
-
+    M7PearlyMarketPage pearlyMarketPage;
+    Actions action;
     @Test
     public void TC0001login() throws InterruptedException {
+        pearlyMarketPage = new M7PearlyMarketPage();
+        action = new Actions(Driver.getDriver());
         //vendro URL adresine gider
         Driver.getDriver().get(ConfigReader.getProperty("pearlyUrl"));
 
@@ -58,7 +59,6 @@ public class US020_TC0002 {
 
         pearlyMarketPage.m7Dated.isDisplayed();
         System.out.println("Degerlendirme tarihi = " + pearlyMarketPage.m7Dated.getText());
-
 
         Driver.closeDriver();
 

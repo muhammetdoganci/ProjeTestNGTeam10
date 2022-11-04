@@ -18,12 +18,14 @@ import java.nio.file.Paths;
 
 public class US016_TC0005 {
 
-    M7PearlyMarketPage pearlyMarketPage = new M7PearlyMarketPage();
-    Actions action = new Actions(Driver.getDriver());
-    Faker faker = new Faker();
-
+    M7PearlyMarketPage pearlyMarketPage;
+    Actions action;
+    Faker faker;
     @Test
     public void TC0005() throws InterruptedException {
+         pearlyMarketPage = new M7PearlyMarketPage();
+         action = new Actions(Driver.getDriver());
+         faker = new Faker();
         //vendro URL adresine gider
         Driver.getDriver().get(ConfigReader.getProperty("pearlyUrl"));
 

@@ -15,13 +15,15 @@ import utilities.ReusableMethods;
 
 public class US016_TC0006 {
 
-    M7PearlyMarketPage pearlyMarketPage = new M7PearlyMarketPage();
-    Actions action = new Actions(Driver.getDriver());
-    Faker faker = new Faker();
-
+    M7PearlyMarketPage pearlyMarketPage;
+    Actions action;
+    Faker faker;
     @Test
     public void TC0006() throws InterruptedException {
-        //vendro URL adresine gider
+        pearlyMarketPage = new M7PearlyMarketPage();
+        action = new Actions(Driver.getDriver());
+        faker = new Faker();
+         //vendro URL adresine gider
         Driver.getDriver().get(ConfigReader.getProperty("pearlyUrl"));
 
         //signin butonuna tiklar vendor hesabiyla giris yapar
